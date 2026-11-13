@@ -6,822 +6,906 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avleen & Chiranjiv | Wedding Invitation</title>
 
-<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Gurmukhi:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
- --wine:#71364b;
- --pink:#f5dce0;
- --rose:#bd7c8b;
- --gold:#b38b50;
- --cream:#fffaf3;
- --dark:#492b35;
+  --wine: #642d38;
+  --gold: #b58a48;
+  --gold2: #d7b77d;
+  --ink: #503b34;
+  --cream: #fffaf2;
+  --blush: #f8e9e2;
 }
 
-* { box-sizing:border-box; margin:0; padding:0; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
- background:var(--cream);
- color:var(--dark);
- font-family:'Poppins',sans-serif;
+  margin: 0;
+  background: #f5ece3;
+  color: var(--ink);
+  font-family: Poppins, sans-serif;
 }
 
 .page {
- min-height:100vh;
- padding:65px 20px;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- text-align:center;
- position:relative;
- overflow:hidden;
+  min-height: 100vh;
+  padding: 34px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .page:before {
- content:"";
- position:absolute;
- inset:12px;
- border:1px solid rgba(179,139,80,.55);
- pointer-events:none;
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(181,138,72,.55);
+  pointer-events: none;
 }
 
-.page-content {
- width:100%;
- max-width:650px;
- position:relative;
- z-index:2;
+.inner {
+  width: min(900px, 100%);
+  position: relative;
+  z-index: 1;
+  background: rgba(255,250,242,.95);
+  border: 1px solid rgba(181,138,72,.4);
+  box-shadow: 0 18px 55px rgba(78,45,35,.10);
+  padding: clamp(26px,5vw,58px);
+  text-align: center;
 }
 
-.script {
- font-family:'Great Vibes',cursive;
- font-weight:400;
+.kicker {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
 }
 
-.serif {
- font-family:'Playfair Display',serif;
+.royal-names {
+  font-family: Cinzel, serif;
+  font-weight: 800;
+  letter-spacing: .055em;
+  color: var(--wine);
+  line-height: 1.4;
+  text-shadow: 0 1px 0 #ead7b8;
 }
 
-.gold { color:var(--gold); }
-.wine { color:var(--wine); }
-
-.eyebrow {
- letter-spacing:4px;
- font-size:10px;
- text-transform:uppercase;
+.royal-names.large {
+  font-size: clamp(30px,6vw,58px);
 }
 
-.small {
- font-size:12px;
- line-height:2;
+.royal-names.medium {
+  font-size: clamp(25px,4.8vw,43px);
+}
+
+.amp {
+  color: var(--gold);
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
 }
 
 .logo {
- width:90px;
- height:90px;
- border:1px solid var(--gold);
- border-radius:50%;
- display:flex;
- align-items:center;
- justify-content:center;
- font-family:'Playfair Display',serif;
- font-size:34px;
- color:var(--wine);
- margin:0 auto 25px;
- position:relative;
+  width: min(390px,85vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 18px;
+  mix-blend-mode: multiply;
 }
 
-.logo:after {
- content:"";
- position:absolute;
- inset:6px;
- border:1px solid var(--gold);
- border-radius:50%;
+.subline {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: #94704b;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-h1 {
- font-size:clamp(50px,11vw,83px);
-}
-
-h2.script { font-size:48px; }
-
-.divider {
- color:var(--gold);
- margin:20px auto;
- letter-spacing:8px;
+.ornament {
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 8px;
+  margin: 18px 0;
 }
 
 .btn {
- display:inline-block;
- padding:14px 30px;
- margin-top:25px;
- border:1px solid var(--gold);
- border-radius:30px;
- background:var(--wine);
- color:white;
- text-decoration:none;
- font-size:12px;
- letter-spacing:2px;
- cursor:pointer;
- transition:.3s;
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--wine);
+  color: #fff8ed;
+  text-decoration: none;
+  padding: 13px 27px;
+  margin: 10px 5px;
+  font: 500 11px Poppins, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.btn:hover { background:#512638; transform:translateY(-3px); }
-
-.light-btn {
- background:transparent;
- color:var(--wine);
+.btn.secondary {
+  background: transparent;
+  color: var(--wine);
 }
 
-.light-btn:hover { color:white; }
-
-.welcome {
- background:
- radial-gradient(ellipse at top,#fff5ed,transparent 70%),
- linear-gradient(145deg,#f9e7e7,#f4d9dc);
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 24px;
 }
 
-.welcome .intro {
- color:var(--wine);
- letter-spacing:3px;
- font-size:11px;
+.nav a {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #8d6a45;
+  text-decoration: none;
+  padding: 7px 10px;
 }
 
-.couple-art {
- width:min(330px,85vw);
- height:250px;
- margin:20px auto;
+h2 {
+  font: 500 clamp(25px,4vw,38px) "Playfair Display",serif;
+  color: var(--wine);
+  margin: 8px 0 20px;
 }
 
-.couple-art svg { width:100%; height:100%; }
-
-.couple-names {
- font-size:65px;
- color:var(--wine);
- line-height:1.1;
+h3 {
+  font: 600 19px "Playfair Display",serif;
+  color: var(--wine);
+  margin: 0 0 8px;
 }
 
-.couple-names span {
- display:block;
- font-size:38px;
- color:var(--gold);
+p {
+  line-height: 1.8;
 }
 
-.welcome-note { margin-top:18px; }
-
-.scratch-page {
- background:#fffaf4;
+.gurmukhi {
+  font-family: "Noto Serif Gurmukhi",serif;
+  font-size: 19px;
+  color: var(--gold);
+  line-height: 2;
 }
 
-.scratch-wrap {
- position:relative;
- width:min(320px,85vw);
- height:150px;
- margin:30px auto;
- border:1px solid var(--gold);
- background:#f5e5d9;
- border-radius:14px;
- overflow:hidden;
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  margin: 25px 0;
 }
 
-.scratch-date {
- position:absolute;
- inset:0;
- display:flex;
- align-items:center;
- justify-content:center;
- flex-direction:column;
+.parent-card,
+.event-card,
+.family-card {
+  background: linear-gradient(145deg,#fffdf8,#f8eee4);
+  border: 1px solid rgba(181,138,72,.48);
+  padding: 22px 18px;
+  position: relative;
 }
 
-.scratch-date strong {
- font-family:'Playfair Display',serif;
- font-size:38px;
- color:var(--wine);
+.parent-card:before,
+.event-card:before,
+.family-card:before {
+  content: "✦";
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  color: var(--gold2);
 }
 
-.scratch-date small {
- letter-spacing:3px;
- font-size:10px;
- margin-bottom:10px;
+.parent-name {
+  font-family: "Playfair Display",serif;
+  color: #78533c;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-#scratchCanvas {
- position:absolute;
- inset:0;
- width:100%;
- height:100%;
- touch-action:none;
- cursor:crosshair;
+.couple-line {
+  font: 600 22px "Playfair Display",serif;
+  color: var(--wine);
+  margin: 14px 0 8px;
 }
 
-.invitation {
- background:#fff7f1;
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 700px;
+  margin: 24px auto;
 }
 
-.ekonkar {
- font-size:56px;
- color:var(--gold);
- margin-bottom:15px;
- font-family:'Noto Serif Gurmukhi',serif;
+.event-card {
+  text-align: left;
+  padding: 24px 26px;
 }
 
-.gurbani {
- font-family:'Noto Serif Gurmukhi',serif;
- font-size:19px;
- line-height:2;
- color:var(--wine);
- margin:18px auto;
+.event-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.invite-names {
- font-family:'Great Vibes',cursive;
- font-size:53px;
- color:var(--wine);
- line-height:1.4;
+.event-date {
+  font: 600 12px Poppins,sans-serif;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  text-transform: uppercase;
 }
 
-.parent-block {
- margin:22px auto;
- line-height:2;
- font-size:13px;
+.event-time {
+  font: 600 13px Poppins,sans-serif;
+  color: var(--wine);
+  line-height: 1.9;
 }
 
-.parent-block strong {
- display:block;
- font-family:'Playfair Display',serif;
- font-size:17px;
- color:var(--gold);
- font-weight:500;
-}
-
-.hashtag {
- color:var(--wine);
- font-family:'Playfair Display',serif;
- letter-spacing:3px;
- font-size:15px;
- margin-top:25px;
-}
-
-.timeline {
- background:#f8e9e5;
-}
-
-.event {
- max-width:460px;
- width:100%;
- background:rgba(255,255,255,.8);
- border:1px solid #dfc5b6;
- border-radius:12px;
- padding:20px 15px;
- margin:12px auto;
-}
-
-.event .event-time {
- font-size:11px;
- letter-spacing:2px;
- color:var(--gold);
-}
-
-.event h3 {
- font-family:'Playfair Display',serif;
- color:var(--wine);
- font-size:23px;
- margin:8px 0;
-}
-
-.event p {
- font-size:12px;
- line-height:1.9;
+.event-location {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 10px 0;
+  color: #70594d;
 }
 
 .map-link {
- display:inline-block;
- color:var(--wine);
- font-size:11px;
- margin-top:9px;
- text-decoration:underline;
+  color: var(--wine);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
 }
 
-.countdown-page {
- background:linear-gradient(150deg,#71364b,#4d2939);
- color:white;
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
 }
 
-.countdown-page .script { color:#f2d5c2; }
-
-.clock {
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:12px;
- margin:30px 0;
+.countdown div {
+  min-width: 76px;
+  padding: 13px 10px;
+  background: #f8eee4;
+  border: 1px solid #dfc99f;
 }
 
-.clock-box {
- width:75px;
- padding:17px 5px;
- border:1px solid #d9b98b;
- border-radius:10px;
- background:rgba(255,255,255,.08);
+.countdown strong {
+  display: block;
+  font: 600 25px Cinzel,serif;
+  color: var(--wine);
 }
 
-.clock-box strong {
- display:block;
- font-size:29px;
- font-family:'Playfair Display',serif;
+.countdown span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #96744d;
 }
 
-.clock-box small {
- font-size:9px;
- letter-spacing:1px;
+.map-frame {
+  width: 100%;
+  height: 330px;
+  border: 0;
+  margin: 15px 0;
 }
 
-.last-page {
- background:#f8e6e2;
+.scratch-wrap {
+  width: min(360px,100%);
+  height: 120px;
+  margin: 25px auto 15px;
+  position: relative;
+  border: 1px solid var(--gold);
+  background: #fff9ed;
+  touch-action: none;
 }
 
-.special {
- padding:20px;
- margin:15px auto;
- max-width:450px;
- border:1px solid #d6b68e;
- border-radius:12px;
- background:#fffaf3;
+.scratch-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 600 27px Cinzel,serif;
+  color: var(--wine);
+  letter-spacing: 2px;
 }
 
-.special h3 {
- font-family:'Great Vibes',cursive;
- font-size:35px;
- color:var(--wine);
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
 }
 
-.special p {
- font-size:12px;
- line-height:2;
+.family-card {
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 32px 24px;
+  background: linear-gradient(145deg,#fffdf8,#f7e8df);
+}
+
+.flower {
+  font-size: 26px;
+  letter-spacing: 8px;
+  color: var(--gold);
+}
+
+.family-to {
+  font: 600 clamp(23px,4vw,32px) Cinzel,serif;
+  color: var(--wine);
+  margin: 12px 0;
+  line-height: 1.8;
+}
+
+.punchline {
+  font: italic 19px "Playfair Display",serif;
+  color: #9b7147;
+  margin: 20px auto;
+  max-width: 480px;
+}
+
+.small {
+  font-size: 12px;
+  color: #927968;
 }
 
 footer {
- padding:25px;
- text-align:center;
- color:var(--wine);
- background:#f2dadd;
- font-size:11px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a18460;
+  margin-top: 28px;
 }
 
-@media(max-width:450px) {
- .couple-names { font-size:52px; }
- .invite-names { font-size:44px; }
- .gurbani { font-size:16px; }
+@media(max-width:620px) {
+  .parent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inner {
+    padding: 28px 20px;
+  }
+
+  .page {
+    padding: 24px 12px;
+  }
+
+  .page:before {
+    inset: 8px;
+  }
+
+  .event-card {
+    padding: 20px 17px;
+  }
+
+  .map-frame {
+    height: 280px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1: WELCOME -->
+<!-- PAGE 1: OPENING PAGE -->
 
-<section class="page welcome" id="home">
-<div class="page-content">
+<section class="page" id="welcome">
+<div class="inner">
 
-<div class="logo">A C</div>
+<div class="kicker">With the blessings of Waheguru</div>
 
-<p class="intro">A BEAUTIFUL BEGINNING</p>
+<img
+class="logo"
+src="wedding-logo.jpeg"
+alt="Avleen and Chiranjiv floral gold AC wedding logo"
+>
 
-<!-- COUPLE ILLUSTRATION -->
-<div class="couple-art">
-<svg viewBox="0 0 330 250" xmlns="http://www.w3.org/2000/svg">
-
-<!-- decorative arch -->
-<path d="M35 235 V120 A130 130 0 0 1 295 120 V235"
-fill="none" stroke="#b38b50" stroke-width="2"/>
-
-<path d="M49 235 V120 A116 116 0 0 1 281 120 V235"
-fill="none" stroke="#d5a8a3" stroke-width="1"/>
-
-<!-- groom turban -->
-<path d="M85 78 Q92 30 132 39 Q166 30 176 75
-Q150 94 90 86Z" fill="#71364b"/>
-
-<path d="M94 62 Q130 30 165 62" fill="none"
-stroke="#cda75d" stroke-width="4"/>
-
-<path d="M126 42 Q135 31 145 44" fill="none"
-stroke="#cda75d" stroke-width="3"/>
-
-<!-- groom face -->
-<ellipse cx="130" cy="103" rx="36" ry="43" fill="#c88e73"/>
-
-<!-- groom beard -->
-<path d="M95 111 Q99 152 130 157 Q161 150 165 111
-Q152 126 130 125 Q108 126 95 111Z"
-fill="#38252b"/>
-
-<!-- groom body -->
-<path d="M76 235 Q76 166 130 155 Q183 166 188 235Z"
-fill="#71364b"/>
-
-<path d="M111 165 L130 198 L148 165"
-fill="none" stroke="#d7b477" stroke-width="3"/>
-
-<!-- bride veil -->
-<path d="M170 77 Q177 22 231 30 Q284 40 277 235
-L181 235 Q202 161 170 77Z"
-fill="#c87989" opacity=".9"/>
-
-<!-- bride face -->
-<ellipse cx="222" cy="100" rx="32" ry="41" fill="#dba087"/>
-
-<!-- bride hair -->
-<path d="M190 90 Q188 45 225 45 Q264 49 254 99
-Q246 63 220 68 Q205 72 190 90Z" fill="#38252b"/>
-
-<!-- bride dress -->
-<path d="M177 235 Q180 160 222 148 Q271 165 282 235Z"
-fill="#a7445c"/>
-
-<path d="M196 180 L222 222 L250 180"
-fill="none" stroke="#d7b477" stroke-width="3"/>
-
-<!-- flower details -->
-<circle cx="65" cy="110" r="5" fill="#b38b50"/>
-<circle cx="275" cy="130" r="5" fill="#b38b50"/>
-<circle cx="58" cy="175" r="4" fill="#d9a3a9"/>
-<circle cx="290" cy="190" r="4" fill="#d9a3a9"/>
-
-</svg>
+<div class="royal-names large">
+AVLEEN <span class="amp">&amp;</span> CHIRANJIV
 </div>
 
-<h1 class="script">Avleen <span style="color:#b38b50">&</span><br>Chiranjiv</h1>
+<div class="ornament">✦ ───── ♡ ───── ✦</div>
 
-<div class="divider">✦ ❀ ✦</div>
+<p class="subline">
+A celebration of love, togetherness & forever
+</p>
 
-<p class="intro">YOU ARE INVITED TO OUR WEDDING CEREMONY</p>
+<p class="kicker" style="margin-top:24px">
+6 &amp; 7 February 2027 · Amritsar
+</p>
 
-<a href="#scratch" class="btn">OPEN INVITATION ♥</a>
+<a class="btn" href="#date">Open Invitation</a>
 
-<p class="small welcome-note">With love, blessings and togetherness</p>
+<div class="nav">
+<a href="#date">INVITATION</a>
+<a href="#formal">BLESSINGS</a>
+<a href="#events">CELEBRATIONS</a>
+<a href="#location">LOCATION</a>
+<a href="#family">FAMILY INVITE</a>
+</div>
+
 </div>
 </section>
 
 
-<!-- PAGE 2: SCRATCH DATE -->
+<!-- PAGE 2: SCRATCH CARD -->
 
-<section class="page scratch-page" id="scratch">
-<div class="page-content">
+<section class="page" id="date">
+<div class="inner">
 
-<p class="eyebrow gold">A LITTLE SURPRISE</p>
-<h2 class="script wine">Save Our Date</h2>
+<div class="kicker">A little surprise awaits</div>
 
-<p class="small">Scratch below to reveal our special day!</p>
+<h2>Save the Date</h2>
+
+<p class="subline">Scratch away to reveal our special day</p>
 
 <div class="scratch-wrap">
-<div class="scratch-date">
-<small>OUR WEDDING DATE</small>
-<strong>06 · 02 · 2027</strong>
-</div>
+<div class="scratch-message">06 · 02 · 2027</div>
 <canvas id="scratchCanvas"></canvas>
 </div>
 
-<p class="small">Use your finger to scratch and reveal the date ♥</p>
+<p class="small">Use your finger or mouse to reveal the date</p>
 
-<a href="#invitation" class="btn">CONTINUE TO INVITATION</a>
+<div class="royal-names medium">
+Avleen <span class="amp">&amp;</span> Chiranjiv
+</div>
+
+<a class="btn" href="#formal">Continue</a>
+
 </div>
 </section>
 
 
 <!-- PAGE 3: FORMAL INVITATION -->
 
-<section class="page invitation" id="invitation">
-<div class="page-content">
+<section class="page" id="formal">
+<div class="inner">
 
-<div class="ekonkar">ੴ</div>
+<div class="gurmukhi">ੴ</div>
 
-<p class="eyebrow gold">WITH THE BLESSINGS OF WAHEGURU</p>
+<div class="kicker">With the blessings of the Almighty</div>
 
-<div class="gurbani">
-ਧੰਨੁ ਸੁਹਾਗਣਿ ਨਾਨਕਾ<br>
-ਜਿਨ੍ਹਾ ਗੁਰਮੁਖਿ ਪਿਆਰੁ
-</div>
-
-<div class="divider">✦ ❀ ✦</div>
-
-<p class="small">REQUEST THE HONOUR OF YOUR PRESENCE AT THE WEDDING OF</p>
-
-<div class="invite-names">
-Avleen Kaur
-<br>
- <div class="parent-block">
-<strong>Daughter of</strong>
-Mr. Gurpreet Singh<br>
-Mrs. Baljot Kaur
-</div>
-<span style="font-size:32px;color:#b38b50;">♥</span>
-<br>
-Chiranjiv Singh
- <br>
- <div class="parent-block">
-<strong>Son of</strong>
-Mr. Gurdeep Singh<br>
-Mrs. Ravinder Kaur
-</div>
-</div>
-
-<div class="divider">❀</div>
-
-<p class="small">
-TOGETHER WITH OUR FAMILIES<br>
-WE INVITE YOU TO CELEBRATE OUR UNION
+<p class="gurmukhi">
+ਧੰਨੁ ਸੁਹਾਗਣਿ ਨਾਨਕਾ ਜਿਨ੍ਹਾ ਗੁਰਮੁਖਿ ਪਿਆਰੁ
 </p>
 
-<div class="hashtag">#ANGSANGMUSKAN</div>
+<h2>Wedding Invitation</h2>
 
-<a href="#events" class="btn">VIEW CELEBRATIONS</a>
+<p class="subline">
+With immense joy, our families invite you to celebrate the union of
+</p>
+
+<div class="royal-names medium" style="margin:22px 0">
+AVLEEN <span class="amp">&amp;</span> CHIRANJIV
+</div>
+
+<div class="parent-grid">
+
+<div class="parent-card">
+
+<div class="couple-line">Avleen Kaur</div>
+
+<div class="kicker">Daughter of</div>
+
+<div class="parent-name">
+S. Gurpreet Singh<br>
+&amp; Smt. Baljot Kaur
+</div>
+
+</div>
+
+<div class="parent-card">
+
+<div class="couple-line">Chiranjiv Singh</div>
+
+<div class="kicker">Son of</div>
+
+<div class="parent-name">
+S. Gurdeep Singh<br>
+&amp; Smt. Ravinder Kaur
+</div>
+
+</div>
+
+</div>
+
+<p class="subline">
+Request the honour of your gracious presence<br>
+as we begin our forever.
+</p>
+
+<div class="ornament">✦ ♡ ✦</div>
+
+<p class="kicker">7 February 2027 · 9:00 AM</p>
+
+<a class="btn" href="#events">View Celebrations</a>
 
 </div>
 </section>
 
 
-<!-- PAGE 4: TIMELINE -->
+<!-- PAGE 4: EVENTS -->
 
-<section class="page timeline" id="events">
-<div class="page-content">
+<section class="page" id="events">
+<div class="inner">
 
-<p class="eyebrow gold">THE WEDDING FESTIVITIES</p>
-<h2 class="script wine">Wedding Celebrations</h2>
+<div class="kicker">The wedding festivities</div>
 
-<p class="small">Two days of love, traditions and memories</p>
+<h2>Celebration Schedule</h2>
 
-<div class="divider">✦ ❀ ✦</div>
+<div class="event-grid">
 
-<div class="event">
-<p class="event-time">06 FEBRUARY 2027 · 8:00 PM</p>
-<h3>Welcome Baraat</h3>
-<p>Let the celebrations begin!</p>
-<p>Bhinder Farm, Tarn Taran Road, Amritsar</p>
-<a class="map-link"
-href="https://www.google.com/maps/search/?api=1&query=Bhinder+Farm+Tarn+Taran+Road+Amritsar"
-target="_blank">VIEW LOCATION ↗</a>
+<!-- BARAAT AND DINNER -->
+
+<article class="event-card">
+
+<div class="event-head">
+<h3>Welcome Baraat &amp; Dinner</h3>
+<span class="event-date">06 February 2027</span>
 </div>
 
-<div class="event">
-<p class="event-time">06 FEBRUARY 2027 · 10:00 PM</p>
-<h3>Wedding Dinner</h3>
-<p>Food, family and festivities</p>
-<p>Bhinder Farm, Tarn Taran Road, Amritsar</p>
-<a class="map-link"
-href="https://www.google.com/maps/search/?api=1&query=Bhinder+Farm+Tarn+Taran+Road+Amritsar"
-target="_blank">VIEW LOCATION ↗</a>
+<div class="event-time">
+Baraat Welcome · 8:00 PM<br>
+Dinner · 10:00 PM
 </div>
 
-<div class="event">
-<p class="event-time">07 FEBRUARY 2027 · 9:00 AM</p>
-<h3>Anand Karaj</h3>
-<p>Beginning our forever with Waheguru's blessings</p>
-<p>Bibi Kaulan Ji Gurudwara, Tarn Taran Road</p>
-<a class="map-link"
-href="https://www.google.com/maps/search/?api=1&query=Bibi+Kaulan+Ji+Gurudwara+Tarn+Taran+Road+Amritsar"
-target="_blank">VIEW LOCATION ↗</a>
+<p class="event-location">
+<strong>Bhinder Farm</strong><br>
+Tarn Taran Road, Amritsar
+</p>
+
+<a
+class="map-link"
+href="https://maps.app.goo.gl/QqqZQf7xrXZY9N8AA?g_st=ic"
+target="_blank"
+rel="noopener"
+>
+OPEN VENUE LOCATION ↗
+</a>
+
+</article>
+
+
+<!-- ANAND KARAJ AND LUNCH -->
+
+<article class="event-card">
+
+<div class="event-head">
+<h3>Anand Karaj &amp; Lunch</h3>
+<span class="event-date">07 February 2027</span>
 </div>
 
-<div class="event">
-<p class="event-time">07 FEBRUARY 2027 · 12:00 PM</p>
-<h3>Wedding Lunch</h3>
-<p>Join us for a meal and blessings</p>
-<p>Bibi Kaulan Ji Gurudwara, Tarn Taran Road</p>
-<a class="map-link"
-href="https://www.google.com/maps/search/?api=1&query=Bibi+Kaulan+Ji+Gurudwara+Tarn+Taran+Road+Amritsar"
-target="_blank">VIEW LOCATION ↗</a>
+<div class="event-time">
+Anand Karaj · 9:00 AM<br>
+Lunch · 12:00 PM
 </div>
 
-<div class="event">
-<p class="event-time">07 FEBRUARY 2027 · 1:00 PM</p>
+<p class="event-location">
+<strong>Bibi Kaulan Ji Gurudwara</strong><br>
+Tarn Taran Road, Amritsar
+</p>
+
+<a
+class="map-link"
+href="https://maps.app.goo.gl/eVfoVYE429cz4PZs6"
+target="_blank"
+rel="noopener"
+>
+OPEN GURUDWARA LOCATION ↗
+</a>
+
+</article>
+
+
+<!-- DOLI -->
+
+<article class="event-card">
+
+<div class="event-head">
 <h3>Doli</h3>
-<p>A new journey, a lifetime of love</p>
-<p>112, Celebration Enclave, Tarn Taran Road</p>
-<a class="map-link"
-href="https://www.google.com/maps/search/?api=1&query=112+Celebration+Enclave+Tarn+Taran+Road+Amritsar"
-target="_blank">VIEW LOCATION ↗</a>
+<span class="event-date">07 February 2027</span>
 </div>
 
-<a href="#countdown" class="btn">THE CELEBRATION BEGINS</a>
+<div class="event-time">1:00 PM</div>
 
-</div>
-</section>
-
-
-<!-- PAGE 5: COUNTDOWN -->
-
-<section class="page countdown-page" id="countdown">
-<div class="page-content">
-
-<p class="eyebrow">OUR FOREVER STARTS SOON</p>
-
-<h2 class="script">The Celebration Begins!</h2>
-
-<div class="divider">✦ ❀ ✦</div>
-
-<p class="small">COUNTING DOWN TO OUR WEDDING CELEBRATIONS</p>
-
-<div class="clock">
-<div class="clock-box">
-<strong id="days">00</strong>
-<small>DAYS</small>
-</div>
-<div class="clock-box">
-<strong id="hours">00</strong>
-<small>HOURS</small>
-</div>
-<div class="clock-box">
-<strong id="minutes">00</strong>
-<small>MINUTES</small>
-</div>
-<div class="clock-box">
-<strong id="seconds">00</strong>
-<small>SECONDS</small>
-</div>
-</div>
-
-<h2 class="script">06 · 02 · 2027</h2>
-<p class="small">LET THE MAGIC BEGIN ♥</p>
-
-<a href="#last" class="btn light-btn">JOIN OUR CELEBRATION</a>
-</div>
-</section>
-
-
-<!-- PAGE 6: MAP RSVP & SPECIAL INVITATION -->
-
-<section class="page last-page" id="last">
-<div class="page-content">
-
-<p class="eyebrow gold">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
-
-<h2 class="script wine">Find Your Way To Us</h2>
-
-<div class="divider">✦ ❀ ✦</div>
-
-<h3 class="serif wine">Bhinder Farm</h3>
-<p class="small">Tarn Taran Road, Amritsar</p>
-
-<a class="btn"
-href="https://www.google.com/maps/search/?api=1&query=Bhinder+Farm+Tarn+Taran+Road+Amritsar"
-target="_blank">
-GET DIRECTIONS ↗
-</a>
-
-<div class="divider">❀ ❀ ❀</div>
-
-<h2 class="script wine">A Special Invitation</h2>
-<p class="small">Our little stars have a message for you!</p>
-
-<div class="special">
-<h3>Ridhayveer Singh</h3>
-<p>Son of the Bride's Brother</p>
-<p>Warmly invites you to celebrate this beautiful union!</p>
-</div>
-
-<div class="special">
-<h3>Nirvair Singh</h3>
-<p>Son of the Bride's Sister</p>
-<p>Can't wait to celebrate with you!</p>
-</div>
-
-<div class="divider">✦ ❀ ✦</div>
-
-<h2 class="script wine">RSVP</h2>
-
-<p class="small">
-Your presence and blessings mean the world to us.
-Please confirm your presence with our family.
+<p class="event-location">
+<strong>112, Celebration Enclave</strong><br>
+Tarn Taran Road, Amritsar
 </p>
 
-<a class="btn" id="rsvp" target="_blank">
-CONFIRM YOUR PRESENCE ♥
+<a
+class="map-link"
+href="https://maps.app.goo.gl/fSaTfvbpYfr7fGw6A"
+target="_blank"
+rel="noopener"
+>
+OPEN DOLI LOCATION ↗
 </a>
 
-<h2 class="script wine" style="margin-top:45px;">
-With Love,<br>Avleen & Chiranjiv
-</h2>
+</article>
 
-<div class="hashtag">#ANGSANGMUSKAN</div>
+</div>
+
+<a class="btn" href="#location">Find the Venue</a>
 
 </div>
 </section>
 
-<footer>
-ੴ &nbsp; MADE WITH LOVE & BLESSINGS &nbsp; ੴ
-<br>
-AVLEEN ♥ CHIRANJIV · 2027
-</footer>
+
+<!-- PAGE 5: LOCATION AND COUNTDOWN -->
+
+<section class="page" id="location">
+<div class="inner">
+
+<div class="kicker">We look forward to welcoming you</div>
+
+<h2>Join Us in Celebration</h2>
+
+<p class="subline">
+Your presence will make our day even more special
+</p>
+
+<div class="countdown">
+
+<div>
+<strong id="days">--</strong>
+<span>DAYS</span>
+</div>
+
+<div>
+<strong id="hours">--</strong>
+<span>HOURS</span>
+</div>
+
+<div>
+<strong id="minutes">--</strong>
+<span>MINUTES</span>
+</div>
+
+<div>
+<strong id="seconds">--</strong>
+<span>SECONDS</span>
+</div>
+
+</div>
+
+<h3>Welcome Baraat &amp; Dinner</h3>
+
+<p class="event-location">
+<strong>Bhinder Farm, Tarn Taran Road, Amritsar</strong>
+</p>
+
+<iframe
+class="map-frame"
+title="Bhinder Farm map"
+src="https://www.google.com/maps?q=Bhinder%20Farm%2C%20Tarn%20Taran%20Road%2C%20Amritsar&output=embed"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<a
+class="btn"
+href="https://maps.app.goo.gl/QqqZQf7xrXZY9N8AA?g_st=ic"
+target="_blank"
+rel="noopener"
+>
+Get Directions
+</a>
+
+<a class="btn secondary" href="#family">
+A Special Invitation
+</a>
+
+</div>
+</section>
+
+
+<!-- PAGE 6: FAMILY INVITATION -->
+
+<section class="page" id="family">
+<div class="inner">
+
+<div class="kicker">A little note filled with love</div>
+
+<h2>A Special Invitation</h2>
+
+<div class="family-card">
+
+<div class="flower">✿ ❀ ✿ ❀ ✿</div>
+
+<p class="subline">With love and warm wishes,</p>
+
+<p class="kicker">Our dear ones</p>
+
+<div class="family-to">
+Ridhayveer Singh<br>
+<span class="amp">&amp;</span><br>
+Nirvair Singh
+</div>
+
+<p class="punchline">
+“Two special smiles, one grand celebration —
+our wedding blooms brighter with you both by our side!”
+</p>
+
+<div class="flower">❀ ✿ ❀ ✿ ❀</div>
+
+<p class="small">
+Come celebrate, laugh, dance and make beautiful memories with us!
+</p>
+
+</div>
+
+<div class="royal-names medium">
+AVLEEN <span class="amp">&amp;</span> CHIRANJIV
+</div>
+
+<p class="kicker">#angsangmuskan</p>
+
+<a
+class="btn"
+href="https://maps.app.goo.gl/QqqZQf7xrXZY9N8AA?g_st=ic"
+target="_blank"
+rel="noopener"
+>
+Wedding Venue Directions
+</a>
+
+<a class="btn secondary" href="#welcome">
+Back to Beginning
+</a>
+
+<footer>MADE WITH LOVE · FEBRUARY 2027</footer>
+
+</div>
+</section>
 
 
 <script>
 
 // SCRATCH CARD
+
+(function() {
+
 const canvas = document.getElementById("scratchCanvas");
 const ctx = canvas.getContext("2d");
-const wrap = document.querySelector(".scratch-wrap");
+const wrap = canvas.parentElement;
 
-function setupScratch() {
-    const rect = wrap.getBoundingClientRect();
-    const ratio = window.devicePixelRatio || 1;
+let drawing = false;
 
-    canvas.width = rect.width * ratio;
-    canvas.height = rect.height * ratio;
-    canvas.style.width = rect.width + "px";
-    canvas.style.height = rect.height + "px";
+function setup() {
 
-    ctx.setTransform(ratio,0,0,ratio,0,0);
+const rect = wrap.getBoundingClientRect();
+const dpr = window.devicePixelRatio || 1;
 
-    const gradient = ctx.createLinearGradient(0,0,rect.width,rect.height);
-    gradient.addColorStop(0,"#b58a54");
-    gradient.addColorStop(1,"#e7c9a2");
+canvas.width = Math.round(rect.width * dpr);
+canvas.height = Math.round(rect.height * dpr);
 
-    ctx.globalCompositeOperation = "source-over";
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0,0,rect.width,rect.height);
+ctx.setTransform(dpr,0,0,dpr,0,0);
 
-    ctx.fillStyle = "#fffaf3";
-    ctx.font = "14px Poppins";
-    ctx.textAlign = "center";
-    ctx.fillText("✦ SCRATCH HERE ✦",rect.width/2,rect.height/2);
+ctx.globalCompositeOperation = "source-over";
 
-    ctx.globalCompositeOperation = "destination-out";
+const grad = ctx.createLinearGradient(
+0,0,rect.width,rect.height
+);
+
+grad.addColorStop(0,"#d9c6a6");
+grad.addColorStop(1,"#a98655");
+
+ctx.fillStyle = grad;
+ctx.fillRect(0,0,rect.width,rect.height);
+
+ctx.fillStyle = "#fff8ed";
+ctx.font = "12px Poppins";
+ctx.textAlign = "center";
+
+ctx.fillText(
+"SCRATCH HERE ✦",
+rect.width/2,
+rect.height/2+4
+);
+
+ctx.globalCompositeOperation = "destination-out";
+
 }
-
-let scratching = false;
 
 function scratch(e) {
-    if (!scratching) return;
 
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+const rect = canvas.getBoundingClientRect();
 
-    ctx.beginPath();
-    ctx.arc(x,y,23,0,Math.PI*2);
-    ctx.fill();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+ctx.beginPath();
+ctx.arc(x,y,19,0,Math.PI*2);
+ctx.fill();
+
 }
 
-canvas.addEventListener("pointerdown",e => {
-    scratching = true;
-    canvas.setPointerCapture(e.pointerId);
-    scratch(e);
+canvas.addEventListener("pointerdown", function(e) {
+
+drawing = true;
+canvas.setPointerCapture(e.pointerId);
+scratch(e);
+
 });
 
-canvas.addEventListener("pointermove",scratch);
+canvas.addEventListener("pointermove", function(e) {
 
-canvas.addEventListener("pointerup",() => {
-    scratching = false;
+if(drawing) scratch(e);
+
 });
 
-canvas.addEventListener("pointercancel",() => {
-    scratching = false;
+["pointerup","pointercancel","lostpointercapture"].forEach(function(eventName) {
+
+canvas.addEventListener(eventName,function() {
+drawing = false;
 });
 
-setupScratch();
+});
+
+window.addEventListener("load",setup);
+
+window.addEventListener("resize",setup);
+
+})();
 
 
-// LIVE COUNTDOWN
-const targetDate = new Date("2027-02-06T20:00:00+05:30").getTime();
+// COUNTDOWN TO 6 FEBRUARY 2027 AT 8 PM IST
+
+(function() {
+
+const target = new Date(
+"2027-02-06T20:00:00+05:30"
+).getTime();
 
 function updateCountdown() {
-    const now = Date.now();
-    const distance = targetDate - now;
 
-    if(distance <= 0) {
-        document.querySelector(".clock").innerHTML =
-            "<h2>Let the celebrations begin! ♥</h2>";
-        return;
-    }
+let diff = Math.max(0,target-Date.now());
 
-    document.getElementById("days").textContent =
-        Math.floor(distance / 86400000);
+const values = {
 
-    document.getElementById("hours").textContent =
-        Math.floor((distance % 86400000) / 3600000);
+days: Math.floor(diff/86400000),
 
-    document.getElementById("minutes").textContent =
-        Math.floor((distance % 3600000) / 60000);
+hours: Math.floor(
+(diff%86400000)/3600000
+),
 
-    document.getElementById("seconds").textContent =
-        Math.floor((distance % 60000) / 1000);
+minutes: Math.floor(
+(diff%3600000)/60000
+),
+
+seconds: Math.floor(
+(diff%60000)/1000
+)
+
+};
+
+Object.keys(values).forEach(function(key) {
+
+document.getElementById(key).textContent =
+String(values[key]).padStart(2,"0");
+
+});
+
 }
 
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
-
-// WHATSAPP RSVP
-const familyNumber = "91XXXXXXXXXX";
-
-document.getElementById("rsvp").href =
-    "https://wa.me/" + familyNumber +
-    "?text=" + encodeURIComponent(
-    "Hello! I would love to attend Avleen and Chiranjiv's wedding. Sending love and blessings! ♥"
-    );
+})();
 
 </script>
 
