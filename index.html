@@ -1627,6 +1627,7 @@ const button = document.getElementById("musicButton");
 
 function toggleMusic() {
     if (music.paused) {
+      music.currentTime = 41;
         music.play().then(() => {
             button.innerHTML = "♫ Pause Music";
         }).catch(error => {
