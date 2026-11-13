@@ -497,6 +497,56 @@ footer {
   }
 }
 
+/* ROYAL MANDAP FRAME */
+
+.mandap-frame {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 65px 35px 45px;
+  position: relative;
+  text-align: center;
+  background: #fffaf2;
+  border: 3px double #b58a48;
+  border-radius: 180px 180px 12px 12px;
+  box-shadow: 0 8px 30px rgba(100,45,56,.10);
+}
+
+.mandap-frame:before {
+  content: "❀  ✦  ❀";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  color: #b58a48;
+  font-size: 25px;
+  letter-spacing: 8px;
+}
+
+.mandap-frame:after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #d7b77d;
+  border-radius: 165px 165px 8px 8px;
+  pointer-events: none;
+}
+
+.mandap-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media(max-width:620px) {
+  .mandap-frame {
+    padding: 65px 18px 35px;
+    border-radius: 115px 115px 10px 10px;
+  }
+
+  .mandap-frame:after {
+    border-radius: 105px 105px 6px 6px;
+  }
+}
+
 </style>
 </head>
 
