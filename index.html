@@ -1031,66 +1031,96 @@ h3 {
   overflow: visible;
   padding: 40px 0;
 }
+#welcome {
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+}
 
+.envelope-scene {
+  position: relative;
+}
+
+.envelope.is-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-flap {
+  backface-visibility: visible;
+}
+
+.open-text {
+  bottom: 25px;
+  z-index: 9;
+}
+
+.envelope {
+  z-index: 2;
+}
+
+.envelope-scene.opened {
+  min-height: 0;
+  height: 0;
+}
 </style>
 </head>
 
 <body>
 <div id="petal-container"></div>
+
 <!-- PAGE 1: OPENING PAGE -->
 
-<div class="envelope-scene">
+<section class="page" id="welcome">
 
-  <button class="envelope" id="openEnvelope" type="button">
-    <span class="envelope-pattern"></span>
-    <span class="envelope-flap"></span>
-    <span class="envelope-fold left-fold"></span>
-    <span class="envelope-fold right-fold"></span>
-    <span class="envelope-fold bottom-fold"></span>
-    <span class="wax-seal">A <small>&</small> C</span>
-    <span class="open-text">TAP TO OPEN</span>
-  </button>
+  <div class="envelope-scene">
+
+    <button class="envelope" id="openEnvelope" type="button">
+      <span class="envelope-pattern"></span>
+      <span class="envelope-flap"></span>
+      <span class="envelope-fold left-fold"></span>
+      <span class="envelope-fold right-fold"></span>
+      <span class="envelope-fold bottom-fold"></span>
+      <span class="wax-seal">A <small>&</small> C</span>
+      <span class="open-text">TAP TO OPEN</span>
+    </button>
+
+  </div>
 
   <div class="welcome-reveal" id="welcomeReveal">
-    <!-- Put your existing welcome page content here -->
-    <!-- Your logo, couple names and wedding date -->
-      <div class="envelope-scene">
 
-    <!-- Envelope code -->
+    <div class="inner">
 
-<section class="page" id="welcome">
-<div class="inner">
+      <div class="kicker">With the blessings of Waheguru</div>
 
-<div class="kicker">With the blessings of Waheguru</div>
+      <img
+        class="logo"
+        src="20865AC7-ECEE-46B0-AF59-6192D032F53E.png"
+        alt="Avleen and Chiranjiv wedding logo"
+      >
 
-<img
-class="logo"
-src="20865AC7-ECEE-46B0-AF59-6192D032F53E.png"
-alt="Avleen and Chiranjiv floral gold AC wedding logo"
->
-  
-<p class="subline">
-A celebration of love, togetherness & forever
-</p>
+      <p class="subline">
+        A celebration of love, togetherness & forever
+      </p>
 
-<p class="kicker" style="margin-top:24px">
-6 &amp; 7 February 2027 · Amritsar
-</p>
+      <p class="kicker" style="margin-top:24px">
+        6 &amp; 7 February 2027 · Amritsar
+      </p>
 
-<a class="btn" href="#date">Open Invitation</a>
+      <a class="btn" href="#date">Open Invitation</a>
 
-<div class="nav">
-<a href="#date">INVITATION</a>
-<a href="#formal">BLESSINGS</a>
-<a href="#events">CELEBRATIONS</a>
-<a href="#location">LOCATION</a>
-<a href="#family">FAMILY INVITE</a>
-</div>
-</div>
-</div>
-</div>
+      <div class="nav">
+        <a href="#date">INVITATION</a>
+        <a href="#formal">BLESSINGS</a>
+        <a href="#events">CELEBRATIONS</a>
+        <a href="#location">LOCATION</a>
+        <a href="#family">FAMILY INVITE</a>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
-
 
 <!-- PAGE 2: SCRATCH CARD -->
 
