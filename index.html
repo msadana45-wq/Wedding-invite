@@ -898,26 +898,31 @@ h3 {
 }
 
 .envelope-scene {
-  min-height: 85vh;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   perspective: 1200px;
   overflow: hidden;
+  padding: 0;
+  background: #300d12;
+  transition: min-height 1s ease;
 }
 
 .envelope {
-  position: relative;
-  width: min(340px, 85vw);
-  height: 450px;
-  border: 1px solid #d7b78a;
-  border-radius: 5px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
   background: linear-gradient(145deg, #541b20, #25090d);
-  box-shadow: 0 20px 45px #2b101044;
+  box-shadow: none;
   cursor: pointer;
-  overflow: visible;
-  transition: transform 1s ease, opacity 1s ease;
+  overflow: hidden;
+  transition: opacity 1s ease;
 }
 
 .envelope-pattern {
@@ -1000,16 +1005,7 @@ h3 {
   text-align: center;
 }
 
-.envelope.is-open .envelope-flap {
-  transform: rotateX(180deg);
-}
-
-.envelope.is-open .wax-seal {
-  opacity: 0;
-}
-
 .envelope.is-open {
-  transform: translateY(30px);
   opacity: 0;
   pointer-events: none;
 }
@@ -1022,11 +1018,18 @@ h3 {
   transition: opacity 1.2s ease;
 }
 
+.envelope-scene.opened {
+  min-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .welcome-reveal.show {
   opacity: 1;
   visibility: visible;
   height: auto;
   overflow: visible;
+  padding: 40px 0;
 }
 
 </style>
@@ -1051,10 +1054,9 @@ h3 {
   <div class="welcome-reveal" id="welcomeReveal">
     <!-- Put your existing welcome page content here -->
     <!-- Your logo, couple names and wedding date -->
-  </div>
+      <div class="envelope-scene">
 
-</div>
-
+    <!-- Envelope code -->
 
 <section class="page" id="welcome">
 <div class="inner">
@@ -1084,7 +1086,8 @@ A celebration of love, togetherness & forever
 <a href="#location">LOCATION</a>
 <a href="#family">FAMILY INVITE</a>
 </div>
-
+</div>
+</div>
 </div>
 </section>
 
@@ -1521,10 +1524,12 @@ document.querySelectorAll(
 });
 
 document.getElementById("openEnvelope").addEventListener("click", function () {
+  const scene = document.querySelector(".envelope-scene");
+
   this.classList.add("is-open");
 
   setTimeout(() => {
-    this.style.display = "none";
+    scene.classList.add("opened");
     document.getElementById("welcomeReveal").classList.add("show");
   }, 1100);
 });
