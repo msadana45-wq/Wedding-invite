@@ -897,12 +897,164 @@ h3 {
   color: #b58a48;
 }
 
+.envelope-scene {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.envelope {
+  position: relative;
+  width: min(340px, 85vw);
+  height: 450px;
+  border: 1px solid #d7b78a;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #541b20, #25090d);
+  box-shadow: 0 20px 45px #2b101044;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.envelope-pattern {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #a77b54;
+  opacity: .65;
+  background:
+    radial-gradient(ellipse at 20% 25%, #a77b5440 0 2px, transparent 3px),
+    radial-gradient(ellipse at 80% 25%, #a77b5440 0 2px, transparent 3px),
+    radial-gradient(ellipse at 20% 75%, #a77b5440 0 2px, transparent 3px),
+    radial-gradient(ellipse at 80% 75%, #a77b5440 0 2px, transparent 3px);
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 58%;
+  background: linear-gradient(145deg, #79363a, #3c1016);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-top: 1px solid #e4c8a1;
+  transform-origin: top;
+  transition: transform 1.2s ease;
+  z-index: 5;
+}
+
+.envelope-fold {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #572027, #2b0b10);
+}
+
+.left-fold {
+  clip-path: polygon(0 0, 50% 58%, 0 100%);
+}
+
+.right-fold {
+  clip-path: polygon(100% 0, 50% 58%, 100% 100%);
+}
+
+.bottom-fold {
+  clip-path: polygon(0 100%, 50% 58%, 100% 100%);
+  background: #351016;
+}
+
+.wax-seal {
+  position: absolute;
+  z-index: 8;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f7e2c4, #d9a879);
+  border: 5px double #f8dcb5;
+  box-shadow: 0 4px 12px #0008;
+  color: #69332e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 29px;
+  transition: opacity .5s ease;
+}
+
+.wax-seal small {
+  font-size: 15px;
+  margin: 0 2px;
+}
+
+.open-text {
+  position: absolute;
+  bottom: -38px;
+  left: 0;
+  width: 100%;
+  color: #9c7548;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.envelope.is-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.is-open .wax-seal {
+  opacity: 0;
+}
+
+.envelope.is-open {
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.welcome-reveal {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 1.2s ease;
+}
+
+.welcome-reveal.show {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+
 </style>
 </head>
 
 <body>
 <div id="petal-container"></div>
 <!-- PAGE 1: OPENING PAGE -->
+
+<div class="envelope-scene">
+
+  <button class="envelope" id="openEnvelope" type="button">
+    <span class="envelope-pattern"></span>
+    <span class="envelope-flap"></span>
+    <span class="envelope-fold left-fold"></span>
+    <span class="envelope-fold right-fold"></span>
+    <span class="envelope-fold bottom-fold"></span>
+    <span class="wax-seal">A <small>&</small> C</span>
+    <span class="open-text">TAP TO OPEN</span>
+  </button>
+
+  <div class="welcome-reveal" id="welcomeReveal">
+    <!-- Put your existing welcome page content here -->
+    <!-- Your logo, couple names and wedding date -->
+  </div>
+
+</div>
+
 
 <section class="page" id="welcome">
 <div class="inner">
@@ -1367,7 +1519,16 @@ document.querySelectorAll(
   element.classList.add("reveal");
   revealObserver.observe(element);
 });
-  
+
+document.getElementById("openEnvelope").addEventListener("click", function () {
+  this.classList.add("is-open");
+
+  setTimeout(() => {
+    this.style.display = "none";
+    document.getElementById("welcomeReveal").classList.add("show");
+  }, 1100);
+});
+
 </script>
 
 </body>
