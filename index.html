@@ -418,6 +418,86 @@ footer {
     height: 280px;
   }
 }
+  
+.wedding-timeline {
+  max-width: 650px;
+  margin: 40px auto;
+  position: relative;
+  text-align: center;
+}
+
+.wedding-timeline:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #b58a48,
+    #b58a48,
+    transparent
+  );
+}
+
+.timeline-event {
+  position: relative;
+  padding: 20px 15px 38px;
+}
+
+.timeline-date {
+  font: 600 11px Poppins, sans-serif;
+  letter-spacing: 3px;
+  color: #a47c45;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 1;
+  background: #fffaf2;
+  border: 1px solid #b58a48;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a47c45;
+}
+
+.timeline-event h3 {
+  font: 500 25px "Playfair Display", serif;
+  color: #642d38;
+  margin: 12px 0 5px;
+}
+
+.timeline-flower {
+  color: #b58a48;
+  font-size: 23px;
+  margin: 18px 0;
+}
+
+.timeline-event .event-time {
+  font-size: 13px;
+  color: #a47c45;
+  font-weight: 600;
+}
+
+.timeline-event .event-location {
+  font-size: 13px;
+  color: #70594d;
+}
+
+@media(max-width:620px) {
+  .timeline-event {
+    padding-bottom: 30px;
+  }
+}
+
 </style>
 </head>
 
@@ -543,6 +623,59 @@ as we begin our forever.
 <div class="kicker">The wedding festivities</div>
 
 <h2>Celebration Schedule</h2>
+
+
+<div class="wedding-timeline">
+
+  <div class="timeline-event">
+    <div class="timeline-date">06 FEBRUARY 2027</div>
+    <div class="timeline-dot">✦</div>
+    <h3>Welcome Baraat</h3>
+    <p class="event-time">8:00 PM</p>
+    <p class="event-location">
+      Bhinder Farm, Tarn Taran Road, Amritsar
+    </p>
+    <a class="map-link" href="https://maps.app.goo.gl/QqqZQf7xrXZY9N8AA?g_st=ic" target="_blank">
+      VIEW LOCATION ↗
+    </a>
+    <div class="timeline-flower">❀</div>
+    <h3>Dinner</h3>
+    <p class="event-time">10:00 PM</p>
+    <p class="event-location">Bhinder Farm</p>
+  </div>
+
+  <div class="timeline-event">
+    <div class="timeline-date">07 FEBRUARY 2027</div>
+    <div class="timeline-dot">✦</div>
+    <h3>Anand Karaj</h3>
+    <p class="event-time">9:00 AM</p>
+    <p class="event-location">
+      Bibi Kaulan Ji Gurudwara, Tarn Taran Road
+    </p>
+    <a class="map-link" href="https://maps.app.goo.gl/eVfoVYE429cz4PZs6" target="_blank">
+      VIEW LOCATION ↗
+    </a>
+    <div class="timeline-flower">❀</div>
+    <h3>Lunch</h3>
+    <p class="event-time">12:00 PM</p>
+    <p class="event-location">Bibi Kaulan Ji Gurudwara</p>
+  </div>
+
+  <div class="timeline-event">
+    <div class="timeline-date">07 FEBRUARY 2027</div>
+    <div class="timeline-dot">✦</div>
+    <h3>Doli</h3>
+    <p class="event-time">1:00 PM</p>
+    <p class="event-location">
+      112, Celebration Enclave, Tarn Taran Road
+    </p>
+    <a class="map-link" href="https://maps.app.goo.gl/fSaTfvbpYfr7fGw6A" target="_blank">
+      VIEW LOCATION ↗
+    </a>
+  </div>
+
+</div>
+
 
 <div class="event-grid">
 
@@ -706,7 +839,7 @@ A Special Invitation
 <p class="kicker">Our dear ones</p>
 
 <div class="family-to">
-Ridhayveer Singh<br>
+Ridheyveer Singh<br>
 <span class="amp">&amp;</span><br>
 Nirvair Singh
 </div>
