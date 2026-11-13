@@ -1622,19 +1622,26 @@ document.getElementById("openEnvelope").addEventListener("click", function () {
   }, 1100);
 });
 
-function toggleMusic() {
-    const music = document.getElementById("weddingMusic");
-    const button = document.getElementById("musicButton");
+const music = document.getElementById("weddingMusic");
+const button = document.getElementById("musicButton");
 
+function toggleMusic() {
     if (music.paused) {
-        music.currentTime = 41;
-        music.play();
-        button.innerHTML = "♫ Pause Music";
+        music.play().then(() => {
+            button.innerHTML = "♫ Pause Music";
+        }).catch(error => {
+            console.log("Music error:", error);
+            alert("Unable to play music. Check the MP3 file location.");
+        });
     } else {
         music.pause();
         button.innerHTML = "♫ Play Music";
     }
 }
+
+music.addEventListener("loadedmetadata", () => {
+    music.currentTime = 41;
+});
 </script>
 
 </body>
