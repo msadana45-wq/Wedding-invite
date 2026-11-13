@@ -887,12 +887,34 @@ h3 {
     font-size: 26px;
   }
 }
+.royal-flourish {
+  color: #b58a48;
+  font-size: 27px;
+  letter-spacing: 5px;
+  margin: 15px auto 22px;
+  animation: nameReveal 1.5s ease both;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.event-symbol {
+  font-size: 23px;
+  margin: 12px auto;
+  color: #b58a48;
+}
 
 </style>
 </head>
 
 <body>
-
+<div id="petal-container"></div>
 <!-- PAGE 1: OPENING PAGE -->
 
 <section class="page" id="welcome">
@@ -966,7 +988,7 @@ A celebration of love, togetherness & forever
 <p class="gurmukhi">
 ਧੰਨੁ ਸੁਹਾਗਣਿ ਨਾਨਕਾ ਜਿਨ੍ਹਾ ਗੁਰਮੁਖਿ ਪਿਆਰੁ
 </p>
-
+<div class="royal-flourish">❧ ❀ ✦ ❀ ❧</div>
 <h2>Wedding Invitation</h2>
 
 <p class="subline">
@@ -1331,7 +1353,24 @@ setInterval(updateCountdown,1000);
 
   setInterval(createPetal, 1000);
 })();
+// SCROLL REVEAL ANIMATION
 
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(
+  ".inner h2, .royal-names, .parent-card, .timeline-event, .family-card"
+).forEach(element => {
+  element.classList.add("reveal");
+  revealObserver.observe(element);
+});
+  
 </script>
 
 </body>
